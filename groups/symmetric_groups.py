@@ -1,5 +1,5 @@
 import numpy as np
-from .groups import Group
+from example_code.groups import Group
 
 class SymmetricGroup(Group):
     symbol = "S"
