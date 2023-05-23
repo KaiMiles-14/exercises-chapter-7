@@ -5,7 +5,7 @@ class SymmetricGroup(Group):
     symbol = "S"
 
     def __init__(self, n):
-        super().__init__()
+        super().__init__(n)
         self.n = n
 
     def validate_element(self, element):
