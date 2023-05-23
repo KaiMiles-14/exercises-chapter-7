@@ -48,7 +48,7 @@ class IntSet(VerifiedSet):
 
     def _verify(self, value):
         if not isinstance(value, Integral):
-            raise ValueError("Set element must be an integer.")
+            raise TypeError(f"IntSet expected an integer, got {type(value).__name__}.")
 
 class UniqueSet(VerifiedSet):
     
