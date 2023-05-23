@@ -13,6 +13,8 @@ class SymmetricGroup(Group):
             raise ValueError("Group element must be a numpy.ndarray.")
         if len(value) != self.n:
             raise ValueError(f"Group element must have length {self.n}.")
+        if np.sort(value) != np.arange(self.n):
+            raise ValueError(f"Group element must contain permutations of integers from 0 to {self.n-1}.")
 
     def operation(self, a, b):
         self._validate(a)
