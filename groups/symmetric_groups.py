@@ -8,13 +8,13 @@ class SymmetricGroup(Group):
         super().__init__(n)
         self.n = n
 
-    def validate_element(self, element):
-        if not isinstance(element, np.ndarray):
+    def _validate(self, value):
+        if not isinstance(value, np.ndarray):
             raise ValueError("Group element must be a numpy.ndarray.")
-        if len(element) != self.n:
+        if len(value) != self.n:
             raise ValueError(f"Group element must have length {self.n}.")
 
-    def group_operation(self, a, b):
-        self.validate_element(a)
-        self.validate_element(b)
+    def operation(self, a, b):
+        self._validate(a)
+        self._validate(b)
         return a[b]
