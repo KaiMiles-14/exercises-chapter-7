@@ -3,7 +3,7 @@
 from collections.abc import Iterable
 
 
-class VerifiedSets(set):
+class VerifiedSet(set):
 
     def _verify(self, value):
         raise NotImplementedError
