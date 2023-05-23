@@ -1,7 +1,4 @@
-
-
-from collections.abc import Iterable
-
+from numbers import Integral
 
 class VerifiedSet(set):
 
@@ -46,3 +43,18 @@ class VerifiedSet(set):
     def copy(self):
         new_set = self.__class__(self)
         return new_set
+
+class IntSet(VerifiedSet):
+
+    def _verify(self, value):
+        if not isinstance(value, Integral):
+            raise ValueError("Set element must be an integer."
+
+class UniqueSet(VerifiedSet):
+    
+        def _verify(self, value):
+            if value in self:
+                raise UniquenessError("Set element must be unique.")
+
+class UniquenessError(KeyError):
+    pass
